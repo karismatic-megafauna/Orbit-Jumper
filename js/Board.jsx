@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 // convert to pure function
 export class Board extends Component {
   render() {
-    const Level = this.props.levelList[this.props.activeComponent];
+    const Level = this.props.levelList[this.props.activeLevel];
     return (
       <div id="board">
         <Level />
@@ -13,6 +13,6 @@ export class Board extends Component {
 }
 
 Board.propTypes = {
-  activeComponent: PropTypes.node,
+  activeLevel: PropTypes.node,
   levelList: PropTypes.object,
 };

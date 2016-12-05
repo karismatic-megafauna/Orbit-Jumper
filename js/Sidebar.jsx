@@ -8,8 +8,8 @@ import styles from '../css/Sidebar.css';
 export class Sidebar extends React.Component {
   static propTypes = {
     onClick: PropTypes.func,
-    componentList: PropTypes.object,
-    activeComponent: PropTypes.string,
+    levelList: PropTypes.object,
+    activeLevel: PropTypes.string,
   }
 
   constructor(props) {
@@ -22,7 +22,7 @@ export class Sidebar extends React.Component {
       <div
         key={i}
         onClick={this.props.onClick.bind(null, comp)}
-        className={(this.props.activeComponent === comp) ? styles.active : ''}
+        className={(this.props.activeLevel === comp) ? styles.active : ''}
       >
         {comp}
       </div>
@@ -37,7 +37,7 @@ export class Sidebar extends React.Component {
         <RaisedButton label="Open Sidebar" onClick={this.handleToggle} />
         <LeftNav open={this.state.open}>
           <div id="sidebar" className={styles.sidebar} >
-            {Object.keys(this.props.componentList).map((component, i) => this.getComp(component, i))}
+            {Object.keys(this.props.levelList).map((component, i) => this.getComp(component, i))}
             <span className={styles.close}>
               <FlatButton label="Close Sidebar" onClick={this.handleToggle} />
             </span>

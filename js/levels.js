@@ -4,8 +4,8 @@
 //
 //-//-//-//-//-//-//-//
 
-import { levelOne } from './levelOne';
+import { LevelOne } from './levelOne/index.jsx';
 
 export default {
-  'Level One': levelOne,
+  'Level One': LevelOne,
 };

@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 
-
-export class RandomLines extends Component {
+export class LevelOne extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,6 +33,6 @@ export class RandomLines extends Component {
   }
 }
 
-RandomLines.propTypes = {
+LevelOne.propTypes = {
   canvas: PropTypes.element,
 };
