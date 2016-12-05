@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Board } from './Board.jsx';
 import { Sidebar } from './Sidebar.jsx';
-import components from './components.js';
+import levels from './levels.js';
 import styles from '../css/App.css';
 
 const mountPoint = document.getElementById('root');
@@ -11,23 +11,25 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeComponent: props.activeComponent,
+      activeLevel: props.activeLevel,
     };
   }
+
   handleClick(comp) {
-    this.setState({ activeComponent: comp });
+    this.setState({ activeLevel: comp });
   }
+
   render() {
     return (
       <div className={styles.app} >
         <Sidebar
-          componentList={this.props.componentList}
+          levelList={this.props.levelList}
           onClick={this.handleClick.bind(this)}
-          activeComponent={this.state.activeComponent}
+          activeLevel={this.state.activeLevel}
         />
         <Board
-          activeComponent={this.state.activeComponent}
-          componentList={this.props.componentList}
+          activeLevel={this.state.activeLevel}
+          levelList={this.props.levelList}
         />
       </div>
     );
@@ -35,13 +37,13 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  activeComponent: PropTypes.node,
-  componentList: PropTypes.object.isRequired,
+  activeLevel: PropTypes.node,
+  levelList: PropTypes.object.isRequired,
 };
 
 render(
   <App
-    activeComponent="Random Lines"
-    componentList={components}
+    activeLevel="Level One"
+    levelList={levels}
   />, mountPoint
 );
