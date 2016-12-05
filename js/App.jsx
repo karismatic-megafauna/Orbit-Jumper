@@ -15,8 +15,8 @@ export class App extends Component {
     };
   }
 
-  handleClick(comp) {
-    this.setState({ activeLevel: comp });
+  handleClick(level) {
+    this.setState({ activeLevel: level });
   }
 
   render() {
